@@ -19,9 +19,12 @@
 
 @implementation TWZipArchive
 
+#pragma mark - Unzipping
+
 + (BOOL)unzipFileAtPath:(NSString *)path toDestination:(NSString *)destination {
 	return [self unzipFileAtPath:path toDestination:destination overwrite:YES password:nil error:nil];
 }
+
 
 + (BOOL)unzipFileAtPath:(NSString *)path toDestination:(NSString *)destination overwrite:(BOOL)overwrite password:(NSString *)password error:(NSError **)error {
 	// Begin opening
@@ -140,6 +143,8 @@
 	return success;
 }
 
+
+#pragma mark - Private
 
 + (NSDate *)_dateFor1980 {
 	NSDateComponents *comps = [[NSDateComponents alloc] init];
